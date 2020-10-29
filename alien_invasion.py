@@ -12,10 +12,9 @@ def run_game():
 	pygame.display.set_caption("Alien Invasion")
 	# Cria uma espaçonave
 	ship = Ship(screen)
-	# Define a cor de fundo
-	bg_color = (230, 230, 230)
 	#Inicia o laço principal do jogo
 	while True:
-		gf.check_events()
+		ship.update()
+		gf.check_events(ship)
 		gf.update_screen(ai_settings, screen, ship)
 run_game()

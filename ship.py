@@ -1,5 +1,5 @@
 import pygame
-
+import sys
 class Ship():
 	
 	def __init__(self, screen):
@@ -12,6 +12,16 @@ class Ship():
 		# Inicia cada nova espaçonave na parte inferior central da tela.
 		self.rect.centerx = self.screen_rect.centerx
 		self.rect.bottom = self.screen_rect.bottom
+		# Flag de movimento
+		self.moving_right = False
+	
+	def update(self):
+		"""Atualiza a posição da espaçonave de acordo com a flag de 
+		movimento."""
+		if self.moving_right:
+			self.rect.centerx += 1
+			print(self.moving_right)
+			
 		
 	def blitme(self):
 		"""Desenha a espaçonave em sua posição atual."""
